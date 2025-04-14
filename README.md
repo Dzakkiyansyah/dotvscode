@@ -10,20 +10,22 @@ This repository contains my personal VS Code settings configuration that works a
 
 ```json
 {
-  // ============== Editor Settings ==============
+  // ================= Editor Settings =================
   "editor.fontSize": 16,
   "editor.fontFamily": "'Monospace Nerd Font', 'Fira Code', 'JetBrainsMono Nerd Font', monospace",
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
+    "source.fixAll.eslint": "always",
     "source.sortImports": "explicit"
   },
   "editor.mouseWheelZoom": true,
   "editor.wordWrap": "on",
   "editor.minimap.enabled": true,
-  
+
   // Editor Visuals
   "editor.renderWhitespace": "none",
   "editor.renderLineHighlight": "none",
@@ -34,11 +36,10 @@ This repository contains my personal VS Code settings configuration that works a
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.stickyScroll.enabled": false,
   "editor.hover.enabled": false,
-  "editor.lightbulb.enabled": "on",
 
-  // ============== Workbench/UI Settings ==============
-  "workbench.colorTheme": "poimandres",
-  "workbench.iconTheme": "symbols",
+  // ================= Workbench / UI Settings =================
+  "workbench.colorTheme": "Andromeda",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
@@ -46,41 +47,69 @@ This repository contains my personal VS Code settings configuration that works a
   "breadcrumbs.enabled": false,
   "material-icon-theme.hidesExplorerArrows": true,
 
-  // ============== Terminal Settings ==============
+  // ================= Terminal Settings =================
   "terminal.integrated.fontFamily": "'Monospace Nerd Font', 'Fira Code', 'JetBrainsMono Nerd Font'",
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // "terminal.integrated.defaultProfile.linux": "zsh", // Aktifkan kalau pakai Linux & zsh
 
-  // ============== File/Explorer Settings ==============
+  // ================= File / Explorer Settings =================
   "files.autoSave": "afterDelay",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "explorer.compactFolders": false,
 
-  // ============== WSL Settings ==============
-  "remote.WSL.defaultBehaviour": "openNewWindow",
-  "remote.WSL.autoReconnect": false,
-
-  // ============== Language Specific ==============
+  // ================= Language Specific Settings =================
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
-  "blade.format.enable": true,
 
-  // ============== Extensions Settings ==============
-  // Spell Checker
-  "cSpell.language": "en, id",
-  "cSpell.enabled": false,
-  "cSpell.allowCompoundWords": true,
+  // ================= Extension Settings =================
+
+  // ESLint
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
 
   // Prettier
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+
+  // Path Intellisense
+  "path-intellisense.autoSlashAfterDirectory": true,
+
+  // Tailwind CSS (aktifkan jika kamu pakai Tailwind)
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "typescriptreact": "typescript"
+  },
 
   // Emmet
   "emmet.triggerExpansionOnTab": true,
 
   // Live Server
   "liveServer.settings.donotShowInfoMsg": true,
+
+  // Code Spell Checker
+  "cSpell.language": "en, id",
+  "cSpell.enabled": false,
+  "cSpell.allowCompoundWords": true
 }
+
